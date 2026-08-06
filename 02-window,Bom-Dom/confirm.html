@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>this is confirm page</h2>
+
+    <script>
+      let result = confirm("Are you sure.");
+      if (result) {
+        alert("User agree.");
+      } else {
+        alert("User did not agree.");
+      }
+
+
+    //   method 2
+    if(confirm("Are you sure you want to leave this page?")){
+        window.location.href= "https://www.google.com";
+    }
+    else{
+        alert("Stayed on the page!");
+    }
+    </script>
+  </body>
+</html>
