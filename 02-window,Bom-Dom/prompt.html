@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width= , initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = prompt("enter first number");
+      let num2 = prompt("enter second number");
+      let sum = Number(num1) + Number(num2);
+      alert(`sum of two numbers is ${sum}`);
+
+      let name = prompt("Enter your name:");
+      if (name) {
+        document.body.innerHTML = `<h2>Hello ${name}.</h2>`;
+      } else {
+        document.body.innerHTML = `<h2>Hello gust.</h2>`;
+      }
+    </script>
+  </body>
+</html>
