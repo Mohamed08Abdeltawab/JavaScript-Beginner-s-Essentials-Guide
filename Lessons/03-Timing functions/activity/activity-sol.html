@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <body>
+    <h1 id="status">Press Start</h1>
+    <button onclick="startProcess()">Start</button>
+
+    <script>
+      function startProcess() {
+        let Status = document.getElementById("status");
+
+        Status.textContent = "Starting soon...";
+
+        setTimeout(() => {
+          Status.textContent = "Running...";
+
+          let count = 0;
+          let intervalID = setInterval(() => {
+            count++;
+            Status.textContent = "Running... " + count;
+
+            if (count === 5) {
+              clearInterval(intervalID);
+              Status.textContent = "Process complete!";
+            }
+          }, 1000);
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

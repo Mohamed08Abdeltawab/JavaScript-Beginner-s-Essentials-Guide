@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="content">Press Start</h1>
+    <button onclick="activity()">press</button>
+
+    <script>
+      function activity() {
+        let koko = document.getElementById("content");
+        let count = 0;
+        koko.textContent = "starting soon...";
+
+        let countup = setInterval(() => {
+          count++;
+          koko.textContent = "Running..." + count;
+          if (count === 5) {
+            koko.textContent = "Process complete!";
+            clearInterval(countup);
+
+            setTimeout(() => {
+              alert("proccess completed!");
+            }, 500);
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
