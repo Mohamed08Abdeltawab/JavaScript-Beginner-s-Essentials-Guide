@@ -12,3 +12,6 @@ do {
   console.log("Running...");
   num++;
 } while (num < 5);
+
+//math.random get number under 1 with decimal number
+// console.log(Math.floor(Math.random() * 10));
