@@ -6,7 +6,7 @@ const scores = new Map([
 
 console.log(scores);
 
-//setting key value pair    
+//setting key value pair   adding 
 scores.set("ali", 77);
 scores.set(7, "ahmed");
 console.log(scores);
