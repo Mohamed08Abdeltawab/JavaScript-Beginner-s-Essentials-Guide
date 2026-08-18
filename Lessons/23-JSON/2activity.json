@@ -1,0 +1,21 @@
+{
+  "solution1": {
+    "name": "Book",
+    "price": null
+  },
+  "solution2": {
+    "username": "mohammed",
+    "age": 35,
+    "isAdmin": false
+  },
+  "solution3": {
+    "errors": [
+      "NaN is not allowed in JSON",
+      "Functions are not allowed"
+    ],
+    "correctJSON": {
+      "count": 0,
+      "log": null
+    }
+  }
+}
