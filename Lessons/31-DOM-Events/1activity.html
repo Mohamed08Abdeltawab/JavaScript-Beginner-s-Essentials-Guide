@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="head-one">One heading with an id</h1>
+
+    <p class="same-class">p1</p>
+    <p class="same-class">p2</p>
+    <p class="same-class">p3</p>
+
+    <button class="btn-action">click</button>
+
+    <script>
+      const heading = document.getElementById("head-one");
+      const firstSelector = document.querySelector(".same-class");
+      const selectAll = document.querySelectorAll(".same-class");
+      const button = document.querySelector(".btn-action");
+
+      button.addEventListener("click", () => {
+        heading.textContent = "changing header by click on button";
+
+        firstSelector.textContent =
+          "changing first paragraph by click on button";
+
+        selectAll.forEach((paragraph) => {
+          paragraph.style.color = "red";
+        });
+      });
+    </script>
+  </body>
+</html>
