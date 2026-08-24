@@ -15,9 +15,9 @@
 
     <script>
 
-        const btn = document.getElementById(".delete");
+        const btn = document.querySelector(".delete");
         const card = btn.closest(".card");
-        const desc = btn.previousElementSibling();
+        const desc = btn.previousElementSibling;
         if(btn.matches("button")){
             console.log("this is button");
         }

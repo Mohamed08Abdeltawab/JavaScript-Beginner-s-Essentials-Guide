@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>createElement vs insertAdjacentHTML</title>
+</head>
+<body>
+
+  <button id="btnCreate">Add (createElement)</button>
+  <button id="btnHTML">Add (insertAdjacentHTML)</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    const list = document.getElementById("list");
+    let count = 1;
+
+    document.getElementById("btnCreate").addEventListener("click", () => {
+      const li = document.createElement("li");
+      li.textContent = "Item " + count++;
+      list.append(li);
+    });
+
+    document.getElementById("btnHTML").addEventListener("click", () => {
+      list.insertAdjacentHTML(
+        "beforeend",
+        `<li>Item ${count++}</li>`
+      );
+    });
+  </script>
+
+</body>
+</html>
