@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Item</title>
+</head>
+<body>
+
+  <input id="itemInput" type="text" placeholder="Enter item">
+
+  <button id="addItemButton">Add Item</button>
+  <button id="removeItemButton">Remove Item</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    const textBox = document.getElementById("itemInput");
+    const btnAdd = document.getElementById("addItemButton");
+    const btnRemove = document.getElementById("removeItemButton");
+    const list = document.getElementById("itemList");
+
+    btnAdd.addEventListener("click", () => {
+        const item = document.createElement("li");
+        item.textContent = textBox.value;
+        list.append(item);
+    })
+
+    btnRemove.addEventListener("click", () => {
+        const item = list.lastElementChild;
+        if(item){
+            item.remove();
+        }
+    })
+
+  </script>
+
+</body>
+</html>
