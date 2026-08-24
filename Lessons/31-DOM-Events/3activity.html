@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .highlight {
+        color: orange;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading">My Heading</h1>
+
+    <p id="paragraph">This is my paragraph.</p>
+
+    <img id="image" src="image.jpg" alt="Example image" />
+
+    <button id="button">Click Me</button>
+
+    <script>
+      const h1 = document.getElementById("heading");
+      const p = document.getElementById("paragraph");
+      const img = document.getElementById("image");
+      const button = document.getElementById("button");
+
+      button.addEventListener("click", () => {
+        h1.textContent = "changing heading text";
+        p.innerHTML = "<b>bold</b>";
+        img.src =
+          "https://hoppingfeet.com/wp-content/uploads/2018/11/IMG_E9565-scaled.jpg";
+        img.style.width = "200px";
+        // p.style.color = "red";
+        p.classList.toggle("highlight");
+      });
+    </script>
+  </body>
+</html>
