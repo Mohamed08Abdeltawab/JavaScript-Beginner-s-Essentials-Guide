@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Constraint Validation Activity</title>
+  </head>
+  <body>
+    <h2>Constraint Validation API Demo</h2>
+
+    <form id="demoForm">
+      <input
+        name="title"
+        placeholder="Title"
+        required
+        minlength="3"
+      /><br /><br />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      /><br /><br />
+
+      <input
+        type="number"
+        name="age"
+        placeholder="Age"
+        min="18"
+        required
+      /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("demoForm");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Ask the browser if the form is valid
+        if (!form.checkValidity()) {
+          // Show built-in validation messages
+          form.reportValidity();
+          return;
+        }
+
+        console.log("Form submitted successfully");
+        alert("Form submitted successfully");
+      });
+    </script>
+  </body>
+</html>
