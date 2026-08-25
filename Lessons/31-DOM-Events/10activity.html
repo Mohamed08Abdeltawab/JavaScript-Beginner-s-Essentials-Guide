@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Delegation Demo</title>
+  <style>
+    li {
+      cursor: pointer;
+      padding: 6px;
+    }
+    li:hover {
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <input id="text" placeholder="Enter item">
+  <button id="addBtn">Add Item</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    const input = document.getElementById("text");
+    const button = document.getElementById("addBtn");
+    const list = document.getElementById("list");
+
+    // Add items dynamically
+    button.addEventListener("click", () => {
+      const value = input.value.trim();
+      if (!value) return;
+
+      const li = document.createElement("li");
+      li.textContent = value;
+      li.classList.add("item");
+
+      list.append(li);
+      input.value = "";
+    });
+
+    // ✅ Event Delegation (ONE listener)
+    list.addEventListener("click", (event) => {
+      if (event.target.classList.contains("item")) {
+        event.target.remove();
+      }
+    });
+  </script>
+
+</body>
+</html>
