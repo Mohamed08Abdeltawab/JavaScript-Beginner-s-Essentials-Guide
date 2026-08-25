@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Console Mastery Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 450px;
+    }
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    kbd {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 2px 6px;
+      font-family: monospace;
+      font-weight: bold;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Console Methods Demo</h2>
+    <p>
+      Open your browser's Developer Tools (<kbd>F12</kbd> or <kbd>Ctrl + Shift + I</kbd>) and check the <strong>Console</strong> tab to see the structured output.
+    </p>
+    <button id="run-btn">Run Pipeline Again</button>
+  </div>
+
+  <script>
+    const users = [
+      { id: 1, name: "Ali", role: "Admin" },
+      { id: 2, name: "Sara", role: "User" }
+    ];
+
+    function fetchUserData() {
+      // 1. Group related logs together
+      console.group("🚀 User Pipeline");
+
+      // 2. Start execution timer
+      console.time("Processing Time");
+
+      // 3. Render array of objects as a formatted table
+      console.table(users);
+
+      // 4. Trace the exact call stack leading to this point
+      console.trace("Pipeline executed from:");
+
+      // 5. End timer and close group
+      console.timeEnd("Processing Time");
+      console.groupEnd();
+    }
+
+    // Run automatically on initial page load
+    fetchUserData();
+
+    // Re-run whenever the user clicks the button
+    document.getElementById("run-btn").addEventListener("click", () => {
+      fetchUserData();
+    });
+  </script>
+
+</body>
+</html>
