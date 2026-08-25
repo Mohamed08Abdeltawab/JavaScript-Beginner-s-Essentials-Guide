@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Handling Activity</title>
+  <style>
+    .error { color: red; }
+    .success { color: green; }
+  </style>
+</head>
+<body>
+
+  <form id="form">
+    <input id="name" placeholder="Name"><br><br>
+    <input id="email" placeholder="Email"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById("form");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+
+      message.textContent = "";
+      message.className = "";
+
+      if (!name) {
+        message.textContent = "Name is required";
+        message.className = "error";
+        return;
+      }
+
+      if (!email || !email.includes("@")) {
+        message.textContent = "Valid email is required";
+        message.className = "error";
+        return;
+      }
+
+      message.textContent = "Form submitted successfully!";
+      message.className = "success";
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
